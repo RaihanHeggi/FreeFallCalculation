@@ -6,4 +6,4 @@ This Program made from Euler Numerical Methods.
 Run this program with python
 and you need to install NumPy, and MATLIBPLOT to run this program 
 
-yeah, this program needs more update on making graph and menu, and still need better calculation methods. 
+yeah, this program needs more update on making graph and menu, and still need better calculation methods.
