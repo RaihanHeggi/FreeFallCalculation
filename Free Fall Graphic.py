@@ -3,6 +3,11 @@ import numpy
 import math
 import os
 
+def hitungListWaktu(time,timeStep):
+    listWaktu = []
+    for i in numpy.arange(0,time,timeStep):
+        listWaktu.append(i);
+    return listWaktu
 
 def hitungPosisi(gravity,time,height,timeStep):
     listPosisi = []
@@ -70,6 +75,7 @@ def main():
     listKecepatan = []
     listKecepatanEuler = []
     listPosisiEuler = []
+    listWaktu = []
     print("=================================MENU=====================================")
     print("                           1. Mulai Aplikasi")
     print("==========================================================================")
@@ -83,11 +89,12 @@ def main():
         listKecepatan = hitungKecepatan(const_gravity,time,timeStep)
         listKecepatanEuler = hitungKecepatanEuler(listKecepatan,const_gravity,timeStep,time)
         listPosisiEuler = hitungPosisiEuler(listPosisi,listKecepatanEuler,time,timeStep,ketinggian)
+        listWaktu = hitungListWaktu(time,timeStep)
         pilihanTampil = str(input("Ingin Menampilkan Graphic Posisi (Analytic (1) / Numerical (2))"))
         if(pilihanTampil == "1"):
-            showGraph(listPosisi,listKecepatan)
+            showGraph(listPosisi,listWaktu)
         elif(pilihanTampil == "2"):
-            showGraph(listPosisiEuler,listKecepatanEuler)
+            showGraph(listPosisiEuler,listWaktu)
     else :
         print("")
         print("Menu Anda Tidak Valid")
